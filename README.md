@@ -18,7 +18,8 @@ Use composer
 
 ```composer require willwashburn/canonical```
 
-Alternatively, add ```"willwashburn/canonical": "~1.0.0"``` to your composer.json
+Alternatively, add ```"willwashburn/canonical": "~1.0.1"``` to your composer.json
 
 ## Change Log
+- v1.0.1 - Clear crawler before use
 - v1.0.0 - Basic tag finding for og:link and link rel=canonical using symfony dom crawler
