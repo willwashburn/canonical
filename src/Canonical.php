@@ -47,6 +47,9 @@ class Canonical
             $tags = $this->getDefaultTags();
         }
 
+        // Make sure each time we use this the dom crawler is clear
+        $this->crawler->clear();
+
         // Add the html to the body
         // probably should do some validation here
         $this->crawler->addContent($body);
