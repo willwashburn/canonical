@@ -1,4 +1,4 @@
-# Canonical :church: [![Travis](https://img.shields.io/travis/willwashburn/canonical.svg)](https://travis-ci.org/willwashburn/canonical) [![Packagist](https://img.shields.io/packagist/dt/willwashburn/canonical.svg)](https://packagist.org/packages/willwashburn/canonical) [![Packagist](https://img.shields.io/packagist/v/willwashburn/canonical.svg)](https://packagist.org/packages/willwashburn/canonical)
+# Canonical :church: [![Travis](https://img.shields.io/travis/willwashburn/canonical.svg)](https://travis-ci.org/willwashburn/canonical) [![Packagist](https://img.shields.io/packagist/dt/willwashburn/canonical.svg)](https://packagist.org/packages/willwashburn/canonical) [![Packagist](https://img.shields.io/packagist/v/willwashburn/canonical.svg)](https://packagist.org/packages/willwashburn/canonical) [![MIT License](https://img.shields.io/packagist/l/willwashburn/canonical.svg?style=flat-square)](https://github.com/willwashburn/canonical/blob/master/LICENSE)
 Return the canonical url from a string of html
 
 # Usage
