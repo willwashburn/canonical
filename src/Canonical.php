@@ -54,7 +54,10 @@ class Canonical
         // probably should do some validation here
         $this->crawler->addContent($body);
 
-        foreach ( $tags as list( $tag, $attribute ) ) {
+        foreach ( $tags as $property ) {
+
+            $tag       = $property[0];
+            $attribute = $property[1];
 
             $tag = $this->crawler->filter($tag);
 
