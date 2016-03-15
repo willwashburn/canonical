@@ -32,6 +32,7 @@ class Canonical
         return [
             ['meta[property="og:url"]', 'content'],
             ['link[rel="canonical"]', 'href'],
+            ['meta[name="twitter:url"]', 'content'],
         ];
     }
 
