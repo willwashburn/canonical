@@ -30,6 +30,7 @@ class ExpandLinkTest extends PHPUnit_Framework_TestCase
         return [
             ['no_tag.html', false],
             ['og_and_link.html', 'http://blog.tailwindapp.com/tailwind-publisher-2-0/'],
+            ['partial.html', 'http://blog.tailwindapp.com/tailwind-publisher-2-0/'],
         ];
     }
 
