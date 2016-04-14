@@ -31,6 +31,7 @@ class ExpandLinkTest extends PHPUnit_Framework_TestCase
             ['no_tag.html', false],
             ['og_and_link.html', 'http://blog.tailwindapp.com/tailwind-publisher-2-0/'],
             ['partial.html', 'http://blog.tailwindapp.com/tailwind-publisher-2-0/'],
+            ['utms.html', 'https://www.etsy.com/listing/237462283/baby-carrying-jacket-baby-carrier-coat'],
         ];
     }
 

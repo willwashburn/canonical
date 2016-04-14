@@ -21,6 +21,7 @@ Use composer
 Alternatively, add ```"willwashburn/canonical": "~1.1.0"``` to your composer.json
 
 ## Change Log
+- v1.2.0 - Remove utm params and hash anchors
 - v1.1.0 - Search for twitter:url meta tags if no others are found
 - v1.0.2 - Fix support for php 5.4
 - v1.0.1 - Clear crawler before use
