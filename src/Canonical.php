@@ -30,8 +30,8 @@ class Canonical
     protected function getDefaultTags()
     {
         return [
-            ['meta[property="og:url"]', 'content'],
             ['link[rel="canonical"]', 'href'],
+            ['meta[property="og:url"]', 'content'],
             ['meta[name="twitter:url"]', 'content'],
         ];
     }
