@@ -18,7 +18,7 @@ Use composer
 
 ```composer require willwashburn/canonical```
 
-Alternatively, add ```"willwashburn/canonical": "~1.1.0"``` to your composer.json
+Alternatively, add ```"willwashburn/canonical": "~1.2"``` to your composer.json
 
 ## Change Log
 - v1.2.1 - Favor canonical tag over og:url tag
