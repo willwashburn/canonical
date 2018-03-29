@@ -5,7 +5,7 @@ use Symfony\Component\DomCrawler\Crawler;
 /**
  * Given a string of html, return the true canonical url from various tags
  *
- * @author  Will Washburn
+ * @author Will Washburn
  */
 class Canonical
 {
@@ -30,9 +30,10 @@ class Canonical
     protected function getDefaultTags()
     {
         return [
-            ['link[rel="canonical"]', 'href'],
-            ['meta[property="og:url"]', 'content'],
-            ['meta[name="twitter:url"]', 'content'],
+            'canonical'    => ['link[rel="canonical"]', 'href'],
+            'og'           => ['meta[property="og:url"]', 'content'],
+            'twitter'      => ['meta[name="twitter:url"]', 'content'],
+            'http-refresh' => ['meta[http-equiv="refresh"]', 'content'],
         ];
     }
 
@@ -44,7 +45,7 @@ class Canonical
      */
     public function url($body, array $tags = [])
     {
-        if ( !$tags OR !is_array($tags) ) {
+        if (!$tags or !is_array($tags)) {
             $tags = $this->getDefaultTags();
         }
 
@@ -55,20 +56,41 @@ class Canonical
         // probably should do some validation here
         $this->crawler->addContent($body);
 
-        foreach ( $tags as $property ) {
-
+        foreach ($tags as $type => $property) {
             $tag       = $property[0];
             $attribute = $property[1];
 
             $tag = $this->crawler->filter($tag);
 
-            if ( count($tag) == 0 ) {
+            if (count($tag) == 0) {
                 continue;
             }
 
             $url = $tag->attr($attribute);
 
-            if ( $url ) {
+            if ($url) {
+                /*
+                 * If we are using the http-refresh tag, then we need to rip out
+                 * the actual url from the tag.
+                 *
+                 * A http-refresh tag generally looks like this:
+                 *   <meta http-equiv="refresh" content="3;url=http://foobar.com" />
+                 *
+                 * We want to only have the part after the url= piece.
+                 */
+                if ($type == 'http-refresh') {
+                    $re = '/url=(.*)/i';
+
+                    preg_match($re, $url, $matches);
+
+                    $url = $matches[1];
+
+                    // If this fails, we try a different tag
+                    if (!$url) {
+                        continue;
+                    }
+                }
+
                 return $this->cleanUrl($url);
             }
         }
@@ -82,21 +104,20 @@ class Canonical
      * that should not be in the canonical url are not in the canonical url
      *
      * @param $url
+     *
+     * @return bool|null|string|string[]
      */
     private function cleanUrl($url)
     {
-
         //remove utm params via regex replace, and cleanup and artifacts left behind afterwards
         $url = preg_replace('/\?$/', '', preg_replace('/&$/', '', preg_replace('/utm_[^&]+&?/i', '', $url)));
 
         //remove any hash anchors.
         $hash_pos = strpos($url, "#");
-        if ( $hash_pos !== false ) {
+        if ($hash_pos !== false) {
             $url = substr($url, 0, $hash_pos);
         }
 
         return $url;
-
     }
-
 }
