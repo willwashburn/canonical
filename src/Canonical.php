@@ -45,7 +45,7 @@ class Canonical
      */
     public function url($body, array $tags = [])
     {
-        if (!$tags or !is_array($tags)) {
+        if (!$tags || !is_array($tags)) {
             $tags = $this->getDefaultTags();
         }
 
