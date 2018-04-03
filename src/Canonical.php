@@ -41,7 +41,7 @@ class Canonical
      * @param       $body
      * @param array $tags
      *
-     * @return false|string
+     * @return false|Url
      */
     public function url($body, array $tags = [])
     {
@@ -89,9 +89,11 @@ class Canonical
                     if (!$url) {
                         continue;
                     }
+
+                    return new Url($this->cleanUrl($url), true);
                 }
 
-                return $this->cleanUrl($url);
+                return new Url($this->cleanUrl($url), false);
             }
         }
 

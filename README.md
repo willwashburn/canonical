@@ -18,9 +18,10 @@ Use composer
 
 ```composer require willwashburn/canonical```
 
-Alternatively, add ```"willwashburn/canonical": "~1.2"``` to your composer.json
+Alternatively, add ```"willwashburn/canonical": "~2.0"``` to your composer.json
 
 ## Change Log
+- v2.0.0 - Parse http-refresh tags; New namespace; New return object
 - v1.2.1 - Favor canonical tag over og:url tag
 - v1.2.0 - Remove utm params and hash anchors
 - v1.1.0 - Search for twitter:url meta tags if no others are found
