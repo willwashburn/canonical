@@ -15,7 +15,7 @@ class ExpandLinkTest extends PHPUnit_Framework_TestCase
     public function test_finds_correct_url($file, $link)
     {
 
-        $canonical = new \WillWashburn\Canonical;
+        $canonical = new \Canonical\Canonical;
 
         $html = file_get_contents(__DIR__ . '/fixtures/' . $file);
 

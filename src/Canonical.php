@@ -1,4 +1,4 @@
-<?php namespace WillWashburn;
+<?php namespace Canonical;
 
 use Symfony\Component\DomCrawler\Crawler;
 

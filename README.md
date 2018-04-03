@@ -3,7 +3,7 @@ Return the canonical url from a string of html
 
 ## Usage
  ```PHP
- $canonical = new \WillWashburn\Canonical;
+ $canonical = new \Canonical\Canonical;
  
  // using some string of html fetched via curl or file get contents or carrier pigeon
  $html = file_get_contents('website.html');
