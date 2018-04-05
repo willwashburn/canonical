@@ -90,36 +90,13 @@ class Canonical
                         continue;
                     }
 
-                    return new Url($this->cleanUrl($url), true);
+                    return new Url($url, true);
                 }
 
-                return new Url($this->cleanUrl($url), false);
+                return new Url($url, false);
             }
         }
 
         return false;
-    }
-
-    /**
-     * Some people add _utm params to their og:url urls and that is.. not very
-     * helpful. This method will clean up what we find to make sure things
-     * that should not be in the canonical url are not in the canonical url
-     *
-     * @param $url
-     *
-     * @return bool|null|string|string[]
-     */
-    private function cleanUrl($url)
-    {
-        //remove utm params via regex replace, and cleanup and artifacts left behind afterwards
-        $url = preg_replace('/\?$/', '', preg_replace('/&$/', '', preg_replace('/utm_[^&]+&?/i', '', $url)));
-
-        //remove any hash anchors.
-        $hash_pos = strpos($url, "#");
-        if ($hash_pos !== false) {
-            $url = substr($url, 0, $hash_pos);
-        }
-
-        return $url;
     }
 }

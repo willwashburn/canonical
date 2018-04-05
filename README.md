@@ -10,7 +10,6 @@ Return the canonical url from a string of html
 
  $canonical->url($html);
  //// http://www.yourlink.com
-
 ```
 
 ## Installation
@@ -18,9 +17,10 @@ Use composer
 
 ```composer require willwashburn/canonical```
 
-Alternatively, add ```"willwashburn/canonical": "~2.0"``` to your composer.json
+Alternatively, add ```"willwashburn/canonical": "~2.1"``` to your composer.json
 
 ## Change Log
+- v2.1.0 - Allow accessing url with utm params and hash anchors in return object
 - v2.0.0 - Parse http-refresh tags; New namespace; New return object
 - v1.2.1 - Favor canonical tag over og:url tag
 - v1.2.0 - Remove utm params and hash anchors
