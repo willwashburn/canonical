@@ -49,18 +49,23 @@ class Canonical
             $tags = $this->getDefaultTags();
         }
 
-        // Make sure each time we use this the dom crawler is clear
-        $this->crawler->clear();
+        // We want to make sure each time we use this the dom crawler doesn't
+        // still have the content from the last time it was used
+        //
+        // There is a method to "clear" the dom crawler, but it is either buggy
+        // in this version or doesn't work like that. Instead, we clone the
+        // instance that was injected and use that.
+        $crawler = clone $this->crawler;
 
         // Add the html to the body
         // probably should do some validation here
-        $this->crawler->addContent($body);
+        $crawler->addContent($body);
 
         foreach ($tags as $type => $property) {
             $tag       = $property[0];
             $attribute = $property[1];
 
-            $tag = $this->crawler->filter($tag);
+            $tag = $crawler->filter($tag);
 
             if (count($tag) == 0) {
                 continue;

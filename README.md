@@ -20,6 +20,7 @@ Use composer
 Alternatively, add ```"willwashburn/canonical": "~2.1"``` to your composer.json
 
 ## Change Log
+- v2.1.1 - Fix bug when calling same html twice with same instance of canonical
 - v2.1.0 - Allow accessing url with utm params and hash anchors in return object
 - v2.0.0 - Parse http-refresh tags; New namespace; New return object
 - v1.2.1 - Favor canonical tag over og:url tag
