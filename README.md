@@ -17,9 +17,10 @@ Use composer
 
 ```composer require willwashburn/canonical```
 
-Alternatively, add ```"willwashburn/canonical": "~3.0"``` to your composer.json
+Alternatively, add ```"willwashburn/canonical": "~3.1"``` to your composer.json
 
 ## Change Log
+- v3.1.0 - Use more consistent naming for extractor class; drop nightly support
 - v3.0.0 - Parse Javascript redirects similar to http-refresh tags 
 - v2.1.1 - Fix bug when calling same html twice with same instance of canonical
 - v2.1.0 - Allow accessing url with utm params and hash anchors in return object

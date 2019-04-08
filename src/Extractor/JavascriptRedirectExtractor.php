@@ -5,7 +5,7 @@ use Canonical\Url;
 /**
  * Extracts a canonical url from the string looking for a javascript redirect
  */
-class JavascriptRedirectParser implements Extractor
+class JavascriptRedirectExtractor implements Extractor
 {
     /**
      * @param       $body

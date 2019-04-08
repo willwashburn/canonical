@@ -2,7 +2,7 @@
 
 use Canonical\Extractor\Extractor;
 use Canonical\Extractor\HtmlTagExtractor;
-use Canonical\Extractor\JavascriptRedirectParser;
+use Canonical\Extractor\JavascriptRedirectExtractor;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
@@ -48,7 +48,7 @@ class Canonical
     {
         return [
             new HtmlTagExtractor(new Crawler()),
-            new JavascriptRedirectParser(),
+            new JavascriptRedirectExtractor(),
         ];
     }
 }
