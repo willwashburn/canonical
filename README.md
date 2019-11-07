@@ -20,6 +20,7 @@ Use composer
 Alternatively, add ```"willwashburn/canonical": "~3.1"``` to your composer.json
 
 ## Change Log
+- v3.1.2 - Loosen dom crawler class requirements
 - v3.1.1 - Remove Javascript redirects from default extractors
 - v3.1.0 - Use more consistent naming for extractor class; drop nightly support
 - v3.0.0 - Parse Javascript redirects similar to http-refresh tags 
