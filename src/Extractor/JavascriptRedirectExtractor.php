@@ -14,7 +14,7 @@ class JavascriptRedirectExtractor implements Extractor
      */
     public function url($body)
     {
-        $re = '/window.location(\.assign|\.replace)\(["|\'](.+)["|\']/i';
+        $re = '/window.location(\.assign|\.replace|\s*?=\s*?)\(?["\']([^"\']*)/i';
         preg_match_all($re, $body, $matches);
 
         if (!empty($matches[2])) {
